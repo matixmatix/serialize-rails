@@ -63,7 +63,7 @@ module ActiveRecord
 
           # merge new serialized attribute and create new hash to ensure that each class in inheritance hierarchy
           # has its own hash of own serialized attributes
-          self.serialized_attributes = serialized_attributes.merge(attr_name.to_s => coder)
+          self.class.serialized_attributes = serialized_attributes.merge(attr_name.to_s => coder)
         end
       end
     end
